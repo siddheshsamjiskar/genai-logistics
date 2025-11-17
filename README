@@ -1,1 +1,122 @@
+# GenAI Logistics – Delivery Delay Prediction App
+
+A Machine Learning based logistics project that predicts whether a shipment will be **delayed or delivered on time** based on:
+
+- Distance (in km)  
+- Traffic level (Low / Medium / High)  
+- Weather conditions (Clear / Rain / Fog)
+
+Built as an end-to-end project including:
+
+1.Synthetic data generation  
+2.ML model training (Random Forest)  
+3.Streamlit web application  
+4.Model deployment ready structure
+
+---
+
+## Demo Features
+
+| Feature | Description |
+|---------|-------------|
+|  ML Prediction | Predicts delivery delay using RandomForest |
+|  Probability Score | Shows confidence % of delay |
+|  Feature Importance | Shows which features influence prediction |
+|  Streamlit UI | Simple web interface for users |
+|  Encoded Inputs | Converts traffic + weather into model format |
+
+---
+
+## Project Structure
+
+genai-logistics/
+│
+├── src/
+│ ├── data_gen.py # Generates synthetic logistics dataset
+│ ├── train_delay_model.py # Trains & saves ML model + encoders
+│ └── app.py # Streamlit app (UI + prediction)
+│
+├── delay_prediction_model.pkl # Saved ML model
+├── label_encoders.pkl # Saved encoders
+├── delivery_data.csv # Generated dataset
+├── requirements.txt
+└── README.md
+
+## 🔧 Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Language | Python |
+| ML Model | RandomForestClassifier |
+| UI | Streamlit |
+| Data | Synthetic CSV generated with Pandas & Geopy |
+| Model Save | Joblib |
+| Virtual Env | Python venv |
+
+---
+
+## How It Works (Pipeline)
+
+1️ Generate synthetic dataset  
+ `python data_gen.py`
+
+2️ Train ML model  
+ `python train_delay_model.py`  
+Creates:  
+ `delay_prediction_model.pkl`  
+ `label_encoders.pkl`
+
+3️ Run Streamlit app  
+ `streamlit run src/app.py`
+
+4️ Input fields appear → choose Distance, Traffic, Weather →  
+ Model predicts delay + probability
+
+---
+
+## Running Instructions
+
+### Create Virtual Environment
+    python -m venv .venv
+    .venv\Scripts\activate (Windows)
+### Install Dependencies
+    pip install -r requirements.txt
+### 3️⃣ Generate Dataset
+    python data_gen.py
+### 4️⃣ Train Model
+    python train_delay_model.py
+### 5️⃣ Run Web App
+    streamlit run src/app.py
+
+---
+
+## 📊 Sample Prediction Output
+    Distance: 120 km
+    Traffic: High
+    Weather: Rain
+
+    Prediction: ❌ DELAYED
+    Probability: 73.4%
+
+    
+---
+
+## Future Improvements
+
+🔹 Add real maps & route optimizer  
+🔹 Use regression for exact delay hours  
+🔹 Add OpenAI automatic customer alert messages  
+🔹 Deploy on Streamlit Cloud or HuggingFace
+
+---
+
+## Author
+
+**Siddhesh Samjiskar**  
+📧 Email: siddheshsamjiskar@hotmail.com 
+💼 LinkedIn: www.linkedin.com/in/siddhesh-samjiskar 
+💻 GitHub: [https://github.com/siddheshsamjiskar](https://github.com/siddheshsamjiskar/)
+
+---
+
 
